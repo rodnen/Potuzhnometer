@@ -1,0 +1,16 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <!-- Фон, якщо потрібен -->
+    <gradient
+        android:startColor="#0B0B0B"
+        android:endColor="#121212"
+        android:angle="0"/>
+    <!-- Рамка -->
+    <stroke
+        android:width="1dp"
+        android:color="#262626" /> <!-- Колір бордера -->
+
+    <!-- Заокруглення, якщо хочеш -->
+    <corners android:radius="19dp" />
+</shape>
