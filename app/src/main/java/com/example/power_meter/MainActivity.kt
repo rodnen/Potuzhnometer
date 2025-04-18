@@ -21,6 +21,8 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.cardview.widget.CardView
+import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.graphics.toColorInt
@@ -61,6 +63,10 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
+        //Зміна кольору статус бара та бара навігації
+        window.statusBarColor = ContextCompat.getColor(this, R.color.black)
+        window.navigationBarColor = ContextCompat.getColor(this, R.color.black)
+
         //Ініціалізвація
         val relativeLayout = findViewById<RelativeLayout>(R.id.content)
         val barsLayout = findViewById<LinearLayout>(R.id.bars_layout)
@@ -71,6 +77,12 @@ class MainActivity : AppCompatActivity() {
 
         var mediaPlayer: MediaPlayer? = null
 
+        val borderColor = "#262626"
+        val cardsList = arrayOf(findViewById<CardView>(R.id.cardView),findViewById<CardView>(R.id.cardView_load), findViewById<CardView>(R.id.cardView_number))
+
+        for(element in cardsList){
+            element.setCardBackgroundColor(borderColor.toColorInt())
+        }
 
         //Створення мсмужки завантаження
         fun createRoundedView(context: Context, cornerRadius: Float, color: Int, index: Int): View {
